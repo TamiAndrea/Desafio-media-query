@@ -1,0 +1,260 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Roboto";
+}
+/**
+Version Mobile
+**/
+@media (max-width: 576px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "navbar menu"
+            "filtro filtro"
+            "principal principal"
+            "paginacion paginacion"
+            "pie pie";
+    }
+
+    .principal {
+        grid-area: principal;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        padding: 25px;
+    }
+
+    .menu i {
+        position: absolute;
+        top: 22px;
+        right: 10px;
+    }
+
+    .menu .links {
+        display: none;
+    }
+}
+
+/**
+Version IPad
+**/
+@media(min-width: 577px) and (max-width: 992px) {
+    .grid-container {
+        grid-template-columns: 1fr 2fr;
+        grid-template-areas:
+            "navbar menu"
+            "filtro principal"
+            "filtro paginacion"
+            "pie pie";
+    }
+
+    .menu {
+        justify-content: end;
+    }
+
+    .menu i {
+        display: none;
+    }
+
+    .menu .links {
+        display: flex;
+        flex-direction: row;
+        font-size: small;
+        align-items: center;
+    }
+
+    .menu .links span {
+        margin-left: 10px;
+    }
+
+    .filtro-precio {
+        display: flex;
+        align-items: center;
+        text-align: center;
+    }
+
+    .principal {
+        grid-area: principal;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(40%, 45%));
+        padding: 2% 2%;
+        column-gap: 25px;
+        row-gap: 25px;
+    }
+}
+
+/**
+Version Escritorio
+**/
+@media(min-width: 993px) {
+    .grid-container {
+        grid-template-columns: 250px auto;
+        grid-template-areas:
+            "navbar filtro"
+            "menu principal"
+            "pie paginacion";
+    }
+
+    .menu i {
+        display: none;
+    }
+
+    .menu .links {
+        display: flex;
+        flex-direction: column;
+        font-size: small;
+        align-items: center;
+        justify-content: start;
+        text-align: center;
+    }
+
+    .menu .links span {
+        width: 250px;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .filtro-precio {
+        display: flex;
+        align-items: center;
+        text-align: center;
+    }
+
+    .principal {
+        grid-area: principal;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(40%, 48%));
+        padding: 2%;
+        column-gap: 25px;
+        row-gap: 25px;
+    }
+}
+
+.grid-container {
+    display: grid;
+    margin: 0 auto;
+    min-height: 100vh;
+}
+
+.navbar {
+    grid-area: navbar;
+    background-color: #EECAD5;
+    color: white;
+    min-height: 75px;
+    height: 100%;
+    justify-content: center;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+}
+
+.menu {
+    display: flex;
+    position: relative;
+    grid-area: menu;
+    background-color: #EECAD5;
+    color: white;
+    text-align: center;
+    font-size: 30px;
+    flex-direction: row;
+    min-height: 75px;
+    height: 100%;
+    padding-right: 2%;
+}
+
+.filtro {
+    grid-area: filtro;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    text-align: center;
+    padding: 25px;
+    background-color: #F6EACB;
+}
+
+.filtro-precio {
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.filtro p {
+    margin: 10px;
+}
+
+.pie {
+    grid-area: pie;
+    display: flex;
+    background-color: #F6EACB;
+    color: white;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.boton {
+    background-color: #EECAD5;
+    width: 100%;
+    padding: 1% 0;
+    appearance: none;
+    border: none;
+    color: white;
+    padding: 9px;
+    font-size: large;
+}
+
+.boton:hover {
+    background-color: #F6EACB;
+}
+
+.card {
+    border: 4px solid #F6EACB;
+    background-color: white;
+    margin-bottom: 15px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.imagen {
+    width: 60%;
+    text-align: center;
+}
+
+.lista-item li {
+    list-style-type: none;
+}
+
+.lista-item {
+    margin: 0;
+    padding: 0;
+}
+
+.cantidad {
+    color: #EECAD5;
+}
+
+.paginacion {
+    grid-area: paginacion;
+    display: grid;
+    padding: 10px;
+}
+
+.paginacion .paginador {
+    display: flex;
+    list-style: none;
+    margin: auto;
+}
+
+.paginacion .paginador .item-pagina {
+    display: inline-flex;
+    width: 30px;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+    color: #EECAD5;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+
+}
